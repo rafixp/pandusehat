@@ -112,7 +112,7 @@ class OpenrouterController extends Controller
         $data = \DB::table('kalkulasi_heads')
             ->join('kalkulasi_details', 'kalkulasi_heads.id', '=', 'kalkulasi_details.kalkulasi_id')
             ->where('kalkulasi_heads.user_id', auth()->user()->id)
-            ->select('kalkulasi_details.rekomendasi')
+            ->select('kalkulasi_details.rekomendasi','kalkulasi_details.z_score')
             ->orderBy('kalkulasi_heads.id', 'desc')
             ->first();
 

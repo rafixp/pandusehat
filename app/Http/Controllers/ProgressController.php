@@ -14,7 +14,7 @@ class ProgressController extends Controller
      */
     public function index()
     {
-        $data = \DB::table('kalkulasi_heads')->where('user_id', auth()->user()->id)->orderBy('tgl','desc')->get();
+        $data = \DB::table('kalkulasi_heads')->where('user_id', auth()->user()->id)->orderBy('id','desc')->get();
         $res = [];
         foreach ($data as $da) {
             $res[] = [
