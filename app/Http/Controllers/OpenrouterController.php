@@ -26,6 +26,7 @@ class OpenrouterController extends Controller
             $imt = $request->bb / ($request->tb * $request->tb);
         }else{
             $tbu = $request->tb / $request->age;
+            $bbu = $request->bb;
             $imt = $request->bb / ($request->tb * $request->tb);
         }
 
@@ -57,7 +58,7 @@ class OpenrouterController extends Controller
                 - Normal: -2 s/d +2 SD
                 - Obesitas (IMT/U > +2 SD)
             5. Buat penjelasan singkat (boleh pakai <b>, <i>, <ul>, <li> dan emoji).
-            6. Buat rekomendasi singkat dalam HTML.
+            6. Buat rekomendasi singkat dalam HTML dengan bentuk paragraf tanpa bullet list.
             Format output HARUS JSON, tanpa backtick, tanpa teks tambahan: 
             { 
                 \"z_score\": \"\",
